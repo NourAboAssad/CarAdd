@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCarFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/etPriceAddCarFragment"
+        app:layout_constraintTop_toTopOf="@+id/etPriceAddCarFragment">
+
+        <EditText
+            android:id="@+id/etYearAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="year..."
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@+id/etColorAddCarFragment"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etColorAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="color..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etModelAddCarFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etYearAddCarFragment" />
+
+        <EditText
+            android:id="@+id/etModelAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="model..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etMnAddCarFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etColorAddCarFragment" />
+
+        <EditText
+            android:id="@+id/etMnAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:ems="10"
+            android:hint="MN..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etHPAddCarFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etModelAddCarFragment" />
+
+        <EditText
+            android:id="@+id/etHPAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:hint="HP..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etPriceAddCarFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etMnAddCarFragment" />
+
+        <EditText
+            android:id="@+id/etPriceAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:ems="10"
+            android:hint="price..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etCilanderAddCarFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etHPAddCarFragment" />
+
+        <EditText
+            android:id="@+id/etCilanderAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:ems="10"
+            android:hint="cylinder..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/etEngineAddCarFragment"
+            app:layout_constraintTop_toBottomOf="@+id/etPriceAddCarFragment" />
+
+        <EditText
+            android:id="@+id/etEngineAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginBottom="47dp"
+            android:ems="10"
+            android:hint="engine displacement..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddAddCarFragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etCilanderAddCarFragment" />
+
+        <Button
+            android:id="@+id/btnAddAddCarFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="47dp"
+            android:text="ADD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
