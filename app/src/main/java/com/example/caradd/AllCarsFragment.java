@@ -27,8 +27,8 @@ import java.util.ArrayList;
  */
 public class AllCarsFragment extends Fragment {
     private FirebaseServices fbs;
-    private ArrayList<Car> rests;
-    private RecyclerView rvRests;
+    private ArrayList<Car> cars;
+    private RecyclerView rvCars;
     private CarAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -82,19 +82,19 @@ public class AllCarsFragment extends Fragment {
         super.onStart();
 
         fbs = FirebaseServices.getInstance();
-        rests = new ArrayList<>();
-        rvRests = getView().findViewById(R.id.rvCarsRestFragment);
-        adapter = new CarAdapter(getActivity(), rests);
-        rvRests.setAdapter(adapter);
-        rvRests.setHasFixedSize(true);
-        rvRests.setLayoutManager(new LinearLayoutManager(getActivity()));
+        cars = new ArrayList<>();
+        rvCars = getView().findViewById(R.id.rvCarsRestFragment);
+        adapter = new CarAdapter(getActivity(), cars);
+        rvCars.setAdapter(adapter);
+        rvCars.setHasFixedSize(true);
+        rvCars.setLayoutManager(new LinearLayoutManager(getActivity()));
         fbs.getFire().collection("cars").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 for (DocumentSnapshot dataSnapshot: queryDocumentSnapshots.getDocuments()) {
-                    Car rest = dataSnapshot.toObject(Car.class);
+                    Car car = dataSnapshot.toObject(Car.class);
 
-                   rests.add(rest);
+                   cars.add(car);
                 }
                 adapter.notifyDataSetChanged();
             }

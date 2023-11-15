@@ -114,15 +114,15 @@ public class AddCarFragment extends Fragment {
                 // add data to firestore
                 Car rest = new Car(color, year, model, price,cylinder,horsePower,mn,engineDisplacement);
 
-                fbs.getFire().collection("restaurants").add(rest).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                fbs.getFire().collection("cars").add(rest).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getActivity(), "Successfully added your restaurant!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Successfully added your car!", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("Failure AddRestaurant: ", e.getMessage());
+                        Log.e("Failure AddCar: ", e.getMessage());
                     }
                 });
 

@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
-    Context context;
-    ArrayList<Car> restList;
+     Context context;
+    ArrayList<Car> carList;
     private FirebaseServices fbs;
 
-    public CarAdapter(Context context, ArrayList<Car> restList) {
+    public CarAdapter(Context context, ArrayList<Car> carList) {
         this.context = context;
-        this.restList = restList;
+        this.carList = carList;
         this.fbs = FirebaseServices.getInstance();
     }
     @NonNull
@@ -30,7 +30,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CarAdapter.MyViewHolder holder, int position) {
-        Car rest = restList.get(position);
+        Car rest = carList.get(position);
         holder.tvModel.setText(rest.getModel());
         holder.tvYear.setText(rest.getYear());
         holder.tvPrice.setText(rest.getPrice());
@@ -39,7 +39,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return restList.size();
+        return carList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
